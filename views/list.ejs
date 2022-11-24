@@ -1,0 +1,38 @@
+<!-- Layouts in EJS :- First you create two file under views section name as header and footer then write code we wanted to use lots of time -->
+<!-- <%- include('header'); -%>
+<h1>
+  Title
+</h1>
+<p>
+  My page
+</p>
+<%- include('footer'); -%> -->
+
+
+
+<%- include("header") -%>
+
+    <div class="box" id="heading">
+        <h1> <%= listTitle %> <h1>
+    </div>
+    
+<div class="box">
+    
+       <% for(let i = 0; i <newListItems.length; i++ ){ %>
+           <div class="item"> 
+            <input type="checkbox">
+            <p><%= newListItems[i]%> </p>
+        </div>
+
+       <% } %> 
+
+       <form action="/" method="post">
+        <input type="text" name="newItem" placeholder="New Item" autocomplete="off">
+
+        <button type="submit" name="list" value=<%= listTitle %>>+</button>
+    </form>
+</div>
+
+<%- include("footer") -%>
+    
+    
